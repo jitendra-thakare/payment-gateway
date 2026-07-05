@@ -1,5 +1,6 @@
 package com.way2paid.payment_gateway.payment;
 
+import com.way2paid.payment_gateway.common.enums.PaymentActor;
 import com.way2paid.payment_gateway.common.enums.PaymentEvent;
 import com.way2paid.payment_gateway.common.enums.PaymentStatus;
 import jakarta.persistence.*;
@@ -29,8 +30,9 @@ public class PaymentTransitionLog {
     @Column(name = "to_status", nullable = false, length = 30)
     private PaymentStatus toStatus;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="actor", length = 100)
-    private String actor;
+    private PaymentActor actor;
 
     @Column(name="occurred_at", nullable = false)
     private java.time.LocalDateTime occurredAt;
