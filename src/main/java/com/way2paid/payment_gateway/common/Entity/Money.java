@@ -34,4 +34,8 @@ public class Money {
         }
         return new Money(this.amountUnits - other.amountUnits, this.currency);
     }
+
+    public int getAmountUnits() {
+        return amountUnits;
+    }
 }
